@@ -1,36 +1,39 @@
 #include "websocket.h"
 #include "parametrizacao.h"
 
-String tratamentoString_P_IHM(){  
-  
-  return    String((float) contaPulsosY/parametro.PULSO_MM_Y)        + ":" + // Dados[0]
-            String((float) contaPulsosX/parametro.PULSO_POL_X)       + ":" + // Dados[1]
-            String((float) PontoInicialSoldaY/parametro.PULSO_MM_Y)  + ":" + // Dados[2]
-            String((float) PontoFinalSoldaY/parametro.PULSO_MM_Y)    + ":" + // Dados[3]
-            String(Ciclo_de_chapisco)+String(" de ")+String(parametro.QTD_CICLO) + ":" + // Dados[4]
-            String((float) PontoFinalSoldaX/parametro.PULSO_POL_X)   + ":" + // Dados[5]
-            String(IniciarChapiscoIHM)                               + ":" + // Dados[6]
-            String(Direcao_OPERACAO)                                 + ":" + // Dados[7] 
-            String(tempGiro/1000)                                    + ":" + // Dados[8]  
-            String(conta_fio_solda)                                  + ":" + // Dados[9]  
-            String(parametro.FIO_SOLDA_POR_FRISO)                    + ":" + // Dados[10]         
-            String(conta_friso)                                      + ":" + // Dados[11] 
-            String(parametro.QTD_FRISOS)                             + ":" + // Dados[12] 
-            String((float) Largura_Fio_de_Solda/parametro.PULSO_MM_Y)+ ":" + // Dados[13] 
-            String((float) (PontoInicialSoldaY-PontoFinalSoldaY)
-            /parametro.PULSO_MM_Y)                                   + ":" + // Dados[14]
-            String(liberachapisco)                                   + ":" + // Dados[15] 
-            String(tempoGiroDecorrido/1000)                          + ":" + // Dados[16] 
-            String(parametro.RPM_TAMBOR)                             + ":" + // Dados[17] 
-            String((float)rpm)                                       + ":" + // Dados[18]  
-            String(parametro.HAB_DESAB_SENSOR_GIRO)                  + ":" + // Dados[19]
-            String((float) tempopPorFrisoDecorrido/60)               + ":" + // Dados[20]
-            String((float) (tempopPorFrisoDecorrido*conta_friso)/60) + ":" + // Dados[21]  
-            String((float) parametro.DISTANCIA_ENTRE_FRISOS)         + ":" + // Dados[22] 
-            String(STATUS_PROCESSO)                                  + ":" + // Dados[23] 
-            dados_do_arame; //Dados[24] ,Dados[25] ,Dados[26] ,Dados[27] ,Dados[28] ,Dados[29] 
-
-
+String tratamentoString_P_IHM(){
+  // Monta a string em um buffer fixo (em vez de concatenar objetos String em série),
+  // evitando fragmentação de heap nesta função que roda a cada ~100ms continuamente.
+  static char buf[220];
+  int n = snprintf(buf, sizeof(buf),
+            "%.2f:%.2f:%.2f:%.2f:%u de %u:%.2f:%d:%d:%u:%d:%u:%d:%u:%.2f:%.2f:%d:%lu:%u:%.2f:%d:%.2f:%.2f:%.2f:%s:",
+            (float) contaPulsosY/parametro.PULSO_MM_Y,                    // Dados[0]
+            (float) contaPulsosX/parametro.PULSO_POL_X,                   // Dados[1]
+            (float) PontoInicialSoldaY/parametro.PULSO_MM_Y,              // Dados[2]
+            (float) PontoFinalSoldaY/parametro.PULSO_MM_Y,                // Dados[3]
+            (unsigned int) Ciclo_de_chapisco, (unsigned int) parametro.QTD_CICLO, // Dados[4]
+            (float) PontoFinalSoldaX/parametro.PULSO_POL_X,               // Dados[5]
+            (int) IniciarChapiscoIHM,                                     // Dados[6]
+            (int) Direcao_OPERACAO,                                       // Dados[7]
+            (unsigned int)(tempGiro/1000),                                // Dados[8]
+            conta_fio_solda,                                              // Dados[9]
+            (unsigned int) parametro.FIO_SOLDA_POR_FRISO,                 // Dados[10]
+            conta_friso,                                                  // Dados[11]
+            (unsigned int) parametro.QTD_FRISOS,                          // Dados[12]
+            (float) Largura_Fio_de_Solda/parametro.PULSO_MM_Y,            // Dados[13]
+            (float) (PontoInicialSoldaY-PontoFinalSoldaY)/parametro.PULSO_MM_Y, // Dados[14]
+            (int) liberachapisco,                                         // Dados[15]
+            (unsigned long)(tempoGiroDecorrido/1000),                     // Dados[16]
+            (unsigned int) parametro.RPM_TAMBOR,                          // Dados[17]
+            (float) rpm,                                                  // Dados[18]
+            (int) parametro.HAB_DESAB_SENSOR_GIRO,                        // Dados[19]
+            (float) tempopPorFrisoDecorrido/60,                           // Dados[20]
+            (float) (tempopPorFrisoDecorrido*conta_friso)/60,             // Dados[21]
+            (float) parametro.DISTANCIA_ENTRE_FRISOS,                     // Dados[22]
+            STATUS_PROCESSO.c_str()                                       // Dados[23]
+  );
+  String resultado = String(buf) + dados_do_arame; //Dados[24] ,Dados[25] ,Dados[26] ,Dados[27] ,Dados[28] ,Dados[29]
+  return resultado;
 }
 
 void reset_variaves_controle()

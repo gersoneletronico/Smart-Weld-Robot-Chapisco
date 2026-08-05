@@ -1,7 +1,7 @@
 #include "parametrizacao.h"
 //========= Função para calcular largura de solda ===============
-void calcula_largura_fio_solda(){  
-    if(PontoInicialSoldaY > 0 && PontoFinalSoldaY >= 0){
+void calcula_largura_fio_solda(){
+    if(PontoInicialSoldaY > 0 && PontoFinalSoldaY >= 0 && parametro.FIO_SOLDA_POR_FRISO > 1){
         Largura_Fio_de_Solda = (PontoInicialSoldaY - PontoFinalSoldaY)/(parametro.FIO_SOLDA_POR_FRISO-1);
     }
     if(PontoInicialSoldaY > 0 && PontoFinalSoldaY > 0 && PontoInicialSoldaY > PontoFinalSoldaY)
