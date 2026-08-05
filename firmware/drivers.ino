@@ -1,3 +1,5 @@
+// Controle de baixo nível dos motores de passo (eixos X/Y): geração de pulsos
+// STEP/DIR, rampas de aceleração/desaceleração e limites de curso.
 #include "drivers.h"
 
 
@@ -59,9 +61,9 @@ void driver_modo_calibracao_Y(const bool avanca_recua, unsigned char rampa, cons
    }
    if(ramp*2 > step){ ramp = step/3; } // Proteção contra overflow de unsigned int
   //=====================================================
-  //Inicializar a variavel statica com a velocidade passada
+  //Inicializa a variável estática com a velocidade passada
   static unsigned char sp_m = speed_M;
-  //Define macro para não repitir codidos
+  //Define macro para não repetir código
   #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
   //Mapeamento para adequar os valores de microsegundo
   static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -124,9 +126,9 @@ void driver_modo_calibracao_X(const bool avanca_recua, unsigned char rampa, cons
         }
    }
    if(ramp*2 > step){ ramp = step/3; } // Proteção contra overflow de unsigned int
-  //Inicializar a variavel statica com a velocidade passada
+  //Inicializa a variável estática com a velocidade passada
   static unsigned char sp_m = speed_M;
-  //Define macro para não repitir codidos
+  //Define macro para não repetir código
   #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
   //Mapeamento para adequar os valores de microsegundo
   static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -161,9 +163,9 @@ void driver_manual_Y_mais (const bool *intertrava, const bool start_stop, const 
         if(rampaYMais < parametro.RAMPA_MANUAL) rampaYMais++; else return;
       }
       
-      //Inicializar a variavel statica com a velocidade passada 
+      //Inicializa a variável estática com a velocidade passada 
       static unsigned char sp_m = speed_M; 
-      //Define macro para não repitir codidos
+      //Define macro para não repetir código
       #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
       //Mapeamento para adequar os valores de microsegundo
       static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -185,9 +187,9 @@ void driver_manual_Y_menos(const bool *intertrava, const bool start_stop, const 
         if(*intertrava){rampaYMenos = parametro.RAMPA_MANUAL;} 
         if(rampaYMenos < parametro.RAMPA_MANUAL) rampaYMenos++; else return;
       }         
-      //Inicializar a variavel statica com a velocidade passada 
+      //Inicializa a variável estática com a velocidade passada 
       static unsigned char sp_m = speed_M; 
-      //Define macro para não repitir codidos
+      //Define macro para não repetir código
       #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
       //Mapeamento para adequar os valores de microsegundo
       static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -210,9 +212,9 @@ void driver_manual_X_mais (const bool *intertrava, const bool start_stop, const 
         if(*intertrava){rampaXMais = parametro.RAMPA_MANUAL;} 
         if(rampaXMais < parametro.RAMPA_MANUAL) rampaXMais++; else return;
       } 
-      //Inicializar a variavel statica com a velocidade passada 
+      //Inicializa a variável estática com a velocidade passada 
       static unsigned char sp_m = speed_M; 
-      //Define macro para não repitir codidos
+      //Define macro para não repetir código
       #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
       //Mapeamento para adequar os valores de microsegundo
       static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -233,9 +235,9 @@ void driver_manual_X_menos(const bool *intertrava, const bool start_stop, const 
         if(*intertrava){rampaXMenos = parametro.RAMPA_MANUAL;} 
         if(rampaXMenos < parametro.RAMPA_MANUAL) rampaXMenos++; else return;
       }     
-      //Inicializar a variavel statica com a velocidade passada 
+      //Inicializa a variável estática com a velocidade passada 
       static unsigned char sp_m = speed_M; 
-      //Define macro para não repitir codidos
+      //Define macro para não repetir código
       #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
       //Mapeamento para adequar os valores de microsegundo
       static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -256,12 +258,12 @@ void driverAutomatico(const unsigned int speed, unsigned char rampa, const char 
   unsigned int ramp = 0;
   unsigned int resto_da_divisao = 0;
   unsigned int rampas = 0;  
-  // Variaves da função
+  // Variáveis da função
   bool direcao = false;
   unsigned int step = 1;
-  //Inicializar a variavel statica com a velocidade passada 
+  //Inicializa a variável estática com a velocidade passada 
   static unsigned int sp_m = speed; 
-  //Define macro para não repitir codidos
+  //Define macro para não repetir código
   #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
   //Mapeamento para adequar os valores de microsegundo
   static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;
@@ -386,12 +388,12 @@ void Soldas(const unsigned int speed, unsigned char rampa, const char eixo,const
   unsigned int ramp = 0;
   unsigned int resto_da_divisao = 0;
   unsigned int rampas = 0;  
-  // Variaves da função
+  // Variáveis da função
   bool direcao = false;
   unsigned int step = 1;
-  //Inicializar a variavel statica com a velocidade passada 
+  //Inicializa a variável estática com a velocidade passada 
   static unsigned int sp_m = speed; 
-  //Define macro para não repitir codidos
+  //Define macro para não repetir código
   #define MACRO_MAPEMENTO_SPEED map(sp_m, 10, 100, tempoMenorVelocidade, tempoMaiorVelocidade)
   //Mapeamento para adequar os valores de microsegundo
   static unsigned int speed_mapeado = MACRO_MAPEMENTO_SPEED;

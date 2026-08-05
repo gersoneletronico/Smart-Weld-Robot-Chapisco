@@ -24,6 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Tela de parâmetros: lê/salva a configuração do robô no ESP32 via HTTP REST (Retrofit).
 public class Form_config extends AppCompatActivity {
 
     private Retrofit retrofit;

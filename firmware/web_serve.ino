@@ -1,3 +1,5 @@
+// Servidor HTTP REST (porta 80): recebe/envia os parâmetros de configuração
+// do app (tela Form_config), com validação de faixa antes de aplicar.
 #include "web_serve.h"
 
 

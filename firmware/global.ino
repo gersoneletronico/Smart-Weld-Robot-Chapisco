@@ -1,3 +1,4 @@
+// Inicialização de GPIOs, atualização OTA e leitura do botão físico local.
 #include "global.h"
 
 void Define_IO(){

@@ -1,3 +1,4 @@
+// Sketch principal: setup(), loop() e as tasks FreeRTOS do WebSocket e do servidor HTTP.
 #include "global.h"
 #include "eeeprom.h"
 #include "drivers.h"

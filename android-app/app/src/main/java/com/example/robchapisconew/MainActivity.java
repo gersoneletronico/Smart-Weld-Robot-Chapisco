@@ -24,6 +24,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import tech.gusavila92.websocketclient.WebSocketClient;
 
+// Tela de controle e telemetria: conecta ao ESP32 via WebSocket, envia os
+// comandos numéricos ("1".."26") e mostra em tempo real os dados recebidos.
 public class MainActivity extends AppCompatActivity {
     boolean desabilitaclickGravaInicial = false, desabilitaclickGravaFinal = false;
     boolean retorno_do_alerta;
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         layout_medidor.setVisibility(View.GONE);
 
         botao_grande_parar_chapisco.setVisibility(View.GONE);
-        // Ao pressionar por um tempo é gravado ponto inicil da solda
+        // Ao pressionar por um tempo é gravado o ponto inicial da solda
         btngravainicio.setOnLongClickListener(v -> {
             desabilitaclickGravaInicial=true;
             if(!StatusChapisco)
@@ -244,7 +246,6 @@ public class MainActivity extends AppCompatActivity {
                     webSocketClient.send("10");
                     break;
                 case MotionEvent.ACTION_UP:
-                    //webSocketClient.send("10");
                     break;
                 case MotionEvent.ACTION_CANCEL:
                     webSocketClient.send("10");
@@ -323,7 +324,6 @@ public class MainActivity extends AppCompatActivity {
 
                 })
                 .setNegativeButton("NÃO", (dialogInterface, i) -> {
-                    //set what should happen when negative button is clicked
                     Toast.makeText(getApplicationContext(),"Você Pode reiniciar quando quiser",Toast.LENGTH_LONG).show();
                 })
                 .show();
@@ -336,7 +336,6 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage(msg)
                 .setPositiveButton("SIM", (dialogInterface, i) -> {
                     webSocketClient.send("9");
-                    //finish();
                 })
                 .setNegativeButton("AJUSTAR", (dialogInterface, i) -> {
                     Intent intent = new Intent(this, Form_config.class);
@@ -507,19 +506,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (Dados[6].equals("1")) {
-            //btnIniciar.setBackgroundResource(R.color.BTNOFF);
-            //btnIniciar.setText("Parar Chapisco ?");
-            //btnIniciar.setTextColor(Color.parseColor("#F6112B"));
             StatusChapisco = true;
             btnIniciar.setText("Parar operação ?");
             btnIniciar.setTextColor(Color.parseColor("#B10101"));
-            //btnretornarX.setVisibility(View.INVISIBLE);
-            //botao_grande_parar_chapisco.setVisibility(View.VISIBLE);
-            //layout_botoes_de_controle.setVisibility(View.GONE);
         } else if (Dados[6].equals("0")){
             botao_grande_parar_chapisco.setVisibility(View.GONE);
             layout_botoes_de_controle.setVisibility(View.VISIBLE);
-            //btnIniciar.setBackgroundResource(R.color.BTNON);
             StatusChapisco = false;
 
             btnIniciar.setText("Iniciar Chapisco ?");

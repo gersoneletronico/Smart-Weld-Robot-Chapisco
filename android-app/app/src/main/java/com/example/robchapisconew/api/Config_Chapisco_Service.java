@@ -9,6 +9,8 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
+// Endpoints Retrofit do servidor HTTP do ESP32 (porta 80) para ler e salvar
+// os parâmetros de configuração do robô.
 public interface Config_Chapisco_Service {
     @GET("config")
     Call<SalvarConfig> RecuperaConfiguraoes();

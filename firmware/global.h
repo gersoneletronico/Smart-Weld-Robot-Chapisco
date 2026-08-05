@@ -21,10 +21,10 @@ Usando a biblioteca FS na versão 1.0 na pasta: C:\Users\G_Automation\AppData\Lo
 #include <EEPROM.h>
 #include <ArduinoOTA.h>
   
-// === Variaves manipulada pela função Driver ===
+// === Variáveis manipulada pela função Driver ===
   long int contaPulsosY = 0;
   long int contaPulsosX = 0;
-// === Variaveis manipulada pela função web socket ===
+// === Variáveis manipulada pela função web socket ===
   boolean Driver_Y_Manualmais = false;
   boolean Driver_Y_Manualmenos = false;
   boolean Driver_X_Manualmais = false;
@@ -78,13 +78,13 @@ unsigned char Ciclo_de_chapisco = 1;
 long int PontoFinalSoldaX = 0;
 long int Largura_Fio_de_Solda = 0;
 
-// ===== Variaves de comando driver ===
+// ===== Variáveis de comando driver ===
 bool Move_tocha_ponto_final = false;
 bool Move_tocha_ponto_inicial = false;
 bool Retorna_carrino = false;
 bool retorna_tocha_para_mover_x = false;
 
-// ===== Variaves chapisco ========
+// ===== Variáveis chapisco ========
 int conta_friso = 1;
 int conta_friso_para_posicao = 0;
 int conta_fio_solda = 1;
@@ -93,9 +93,9 @@ unsigned int tempGiro = 0;
 bool pararchapisco = false;
 unsigned long tempoGiroDecorrido = 0;
 unsigned long tempopPorFrisoDecorrido = 0;
-// ===== Variaves segurança ========
+// ===== Variáveis segurança ========
 bool liberachapisco = false;
-// ===== Variaves para entradas digitas ========
+// ===== Variáveis para entradas digitas ========
 
 unsigned long tempo_anti_balse2 = 0;
 

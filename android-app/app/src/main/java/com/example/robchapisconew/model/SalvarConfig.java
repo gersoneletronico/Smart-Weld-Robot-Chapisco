@@ -1,5 +1,7 @@
 package com.example.robchapisconew.model;
 
+// Modelo dos parâmetros de configuração do robô, espelhando a struct Parametros do
+// firmware ESP32 — usado tanto para ler (GET) quanto para salvar (POST) via Retrofit.
 public class SalvarConfig {
     double DISTANCIA_ENTRE_FRISOS;
     int QTD_FRISOS;
@@ -45,42 +47,6 @@ public class SalvarConfig {
     public int getRAMPA_MANUAL() {
         return RAMPA_MANUAL;
     }
-
-
-
-//    public SalvarConfig(
-//            double DISTANCIA_ENTRE_FRISOS,
-//            int QTD_FRISOS,
-//            int FIO_SOLDA_POR_FRISO,
-//            int RPM_TAMBOR,
-//            boolean HAB_DESAB_SENSOR_GIRO,
-//            int SPEED_MANUAL,
-//            int SPEED_AUTOMA,
-//            boolean HAB_ALIMENTADOR_1,
-//            boolean HAB_ALIMENTADOR_2,
-//            int PULSO_POL_X,
-//            int PULSO_MM_Y,
-//            int RECUO_DO_Y_PARA_X,
-//            boolean MODO_CALIBRACAO,
-//            int CURSO_MAX_TOCHA,
-//            int PONTO_FINAL_SOLDA_AUTO
-//    ) {
-//        this.DISTANCIA_ENTRE_FRISOS = DISTANCIA_ENTRE_FRISOS;
-//        this.QTD_FRISOS = QTD_FRISOS;
-//        this.FIO_SOLDA_POR_FRISO = FIO_SOLDA_POR_FRISO;
-//        this.RPM_TAMBOR = RPM_TAMBOR;
-//        this.HAB_DESAB_SENSOR_GIRO = HAB_DESAB_SENSOR_GIRO;
-//        this.SPEED_MANUAL = SPEED_MANUAL;
-//        this.SPEED_AUTOMA = SPEED_AUTOMA;
-//        this.HAB_ALIMENTADOR_1 = HAB_ALIMENTADOR_1;
-//        this.HAB_ALIMENTADOR_2 = HAB_ALIMENTADOR_2;
-//        this.PULSO_POL_X = PULSO_POL_X;
-//        this.PULSO_MM_Y = PULSO_MM_Y;
-//        this.RECUO_DO_Y_PARA_X = RECUO_DO_Y_PARA_X;
-//        this.MODO_CALIBRACAO = MODO_CALIBRACAO;
-//        this.CURSO_MAX_TOCHA = CURSO_MAX_TOCHA;
-//        this.PONTO_FINAL_SOLDA_AUTO = PONTO_FINAL_SOLDA_AUTO;
-//    }
 
 
     public double getDISTANCIA_ENTRE_FRISOS() {

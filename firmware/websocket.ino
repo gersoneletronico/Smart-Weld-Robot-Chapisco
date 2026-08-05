@@ -1,3 +1,5 @@
+// Servidor WebSocket (porta 81): envia telemetria periódica pro app e
+// recebe os comandos numéricos ("1".."26") de controle em tempo real.
 #include "websocket.h"
 #include "parametrizacao.h"
 

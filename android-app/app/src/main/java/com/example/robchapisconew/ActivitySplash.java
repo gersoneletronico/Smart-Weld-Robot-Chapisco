@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+// Tela de splash: mostra a animação de abertura e segue para a MainActivity.
 public class ActivitySplash extends Activity {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();

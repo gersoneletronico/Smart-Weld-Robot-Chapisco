@@ -1,3 +1,5 @@
+// Lógica de negócio: máquina de estados dos ciclos de chapisco e solda,
+// controle do arame/moenda e cálculo do tempo de giro do tambor.
 #include "chapisco.h"
 
 void AcionamentoArameMaquina(bool arame, bool maquina){    
@@ -152,7 +154,7 @@ bool chapisco(){
   long int estremo_esquerdo =   passo_friso * (parametro.QTD_FRISOS-1)*(-1);
     
   if(conta_fio_solda <= parametro.FIO_SOLDA_POR_FRISO){ 
-    // Pisiciona X na posição inicial se o mesmo estiver fora 
+    // Posiciona X na posição inicial se o mesmo estiver fora 
     if(!posiciona_eixo_x_uma_vez){    
       Posiciona_eixo_X();
       pararchapisco = true;
@@ -165,7 +167,7 @@ bool chapisco(){
       AcionamentoArameMaquina(false, false);  
       // Zera contagem do fio de solda     
       conta_fio_solda = movi_tocha(&contaPulsosY, true);
-      //Recua tocha para avança carrinhpo
+      //Recua tocha para avança carrinho
       Recuatocha_para_mover_X();
       // Movimenta Carrinho        
       if(conta_friso < parametro.QTD_FRISOS){
@@ -193,7 +195,7 @@ bool Soldagem(){
   long int estremo_esquerdo =   passo_friso * (parametro.QTD_FRISOS-1)*(-1);
     
   if(conta_fio_solda <= 1){ 
-    // Pisiciona X na posição inicial se o mesmo estiver fora 
+    // Posiciona X na posição inicial se o mesmo estiver fora 
     if(!posiciona_eixo_x_uma_vez){    
       Posiciona_eixo_X();
       pararchapisco = true;
@@ -206,7 +208,7 @@ bool Soldagem(){
       AcionamentoArameMaquina(false, false);  
       // Zera contagem do fio de solda     
       conta_fio_solda = oscila_tocha(&contaPulsosY, true);
-      //Recua tocha para avança carrinhpo
+      //Recua tocha para avança carrinho
       Recuatocha_para_mover_X();
       // Movimenta Carrinho        
       if(conta_friso < parametro.QTD_FRISOS){

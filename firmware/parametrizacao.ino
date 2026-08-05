@@ -1,3 +1,5 @@
+// Grava os pontos inicial/final de solda definidos pelo operador e calcula
+// a largura do fio de solda a partir deles.
 #include "parametrizacao.h"
 //========= Função para calcular largura de solda ===============
 void calcula_largura_fio_solda(){

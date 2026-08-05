@@ -1,3 +1,5 @@
+// Persistência de parâmetros na EEPROM: grava só o que mudou, evitando
+// desgaste desnecessário da flash.
 #include "eeeprom.h"
 
 void primeira_leitura(struct Parametros *parametro){
@@ -141,18 +143,18 @@ void primeira_leitura(struct Parametros *parametro){
 int eeprom_automatica(struct Parametros *parametro){
   static bool HAB_LEITURA = EEPROM.readBool(500); //ESSE PARAMETRO DEVE SER SETADO PAR 1
   static bool flag = false;
-  if(HAB_LEITURA && !flag){                //Só fais a leitura quando algum parametro for auterado
+  if(HAB_LEITURA && !flag){                //Só fais a leitura quando algum parametro for alterado
     primeira_leitura(parametro); 
     flag=true;   
   } 
-  static struct Parametros parametrosInicias = *parametro;  //Recebe uma unica veiz na inicialização os valores dos parametros 
+  static struct Parametros parametrosInicias = *parametro;  //Recebe uma unica vez na inicialização os valores dos parametros 
   int address = 0;
   //==============================================================
   #define D DISTANCIA_ENTRE_FRISOS                          //Pega nome do parametro 
   if(parametrosInicias.D != parametro->D || !HAB_LEITURA){  //Verifica se a variavel parametro foi alterada
     parametrosInicias.D = parametro->D;                     //Atualiza valor da variavel
     EEPROM.writeFloat(address, parametro->D);               //Grava na memoria eeprom
-    Serial.println("   EEPROM Address: "+String(address)+"|| Valor: "+String(parametro->D));//Emprime na serial
+    Serial.println("   EEPROM Address: "+String(address)+"|| Valor: "+String(parametro->D));//Imprime na serial
   }                                                         //Fim if
   address += sizeof(parametro->D);                                 //Atualiza para o proximo endereço
   //=============================================================
