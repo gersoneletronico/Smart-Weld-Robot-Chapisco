@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Smart Weld Robot</string>
+    <string name="dados_em_tempo_real">Dados Em Tempo Real</string>
+    <string name="dados_em_tempo_real_alim">Velocidade Alimentadores</string>
+    <string name="dados_em_tempo_real_volume">Totalizadores Volume</string>
+    <string name="dados_em_tempo_real_comprimentro">Totalizadores Comprimentro</string>
+</resources>

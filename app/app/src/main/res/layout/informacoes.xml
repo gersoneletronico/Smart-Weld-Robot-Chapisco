@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:id="@+id/layout_informacoes"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="30dp"
+            android:text="@string/dados_em_tempo_real"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!--\\\\\\\\\\\\\\\\\\\!-->
+    <!--  Eixo Y !-->
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Dados Eixo Tocha"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tocha Posiçao"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtPulsosY"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ponto Inicial/Final Solda"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtPontoInicialY"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Largura do Chapisco"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtLarguradochapisco"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Qtd Fios de solda"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtFiosdesolda"
+            style="@style/style_txt_informacoes" />
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Distancia Entre Fios"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtLarguraFio"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Posiçao Carrinho"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtPulsosX"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <!--\\\\\\\\\\\\\\\\\\\!-->
+    <!--  Dados Eixo x !-->
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Dados Eixo Carrinho"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ciclos"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtCiclo_chapisco"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Qtd Frisos Chapiscado"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtFrisosSoladados"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <!--\\\\\\\\\\\\\\\\\\\!-->
+    <!--  Tempos !-->
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Tempos"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tempo Giro"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtTempoGiro"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tempo Por Friso"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtTempoPorFriso"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tempo Total"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtTempoTotal"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+    <!--\\\\\\\\\\\\\\\\\\\!-->
+    <!--  Consumo de arame !-->
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Consumo de Solda"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <include layout="@layout/lay_velocidade"/>
+    <include layout="@layout/lay_volume"/>
+    <include layout="@layout/lay_metragem"/>
+    <!--\\\\\\\\\\\\\\\\\\\!-->
+    <!--  Eventos !-->
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Eventos"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ultimo Evento"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            style="@style/style_txt_informacoes" />
+    </LinearLayout>
+
+</LinearLayout>

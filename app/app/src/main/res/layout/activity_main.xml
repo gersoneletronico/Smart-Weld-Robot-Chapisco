@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/layout_pussos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtStepsY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/txtStepsX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+            <include layout="@layout/botao_iniciar_para" />
+
+        <LinearLayout
+            android:id="@+id/layout_boteos_controle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGravarInicio"
+                        android:layout_weight="1"
+                        android:text="Ponto Inicial Gravar Y"
+                        style="@style/ButtonForm" />
+
+                    <Button
+                        android:id="@+id/btnGravarFinal"
+                        android:layout_weight="1"
+                        android:text="Ponto Final Gravar Y"
+                        style="@style/ButtonForm" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnYmais"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/setaparabaixo"
+                android:textSize="25dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnXmenos"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/setaparaesquerda"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnIniciar"
+                        android:layout_height="50dp"
+                        android:text="Iniciar Chapisco"
+                        style="@style/ButtonForm" />
+
+                    <Button
+                        android:id="@+id/btnretornarX"
+                        android:layout_height="50dp"
+                        android:text=" Retornar Carro "
+                        style="@style/ButtonForm"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnXmais"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/setaparadireita"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnYmenos"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:background="@drawable/setaparacima"
+                android:textSize="80dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnArame1"
+                    android:layout_weight="1"
+                    android:text="Só Arame 1"
+                    style="@style/ButtonForm"/>
+
+                <Button
+                    android:id="@+id/btnArame2"
+                    android:layout_weight="1"
+                    android:text="Só Arame 2"
+                    style="@style/ButtonForm"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Maquina_arame1"
+                    android:layout_weight="1"
+                    android:text="Chapisco Esq"
+                    style="@style/ButtonForm"/>
+
+                <Button
+                    android:id="@+id/Maquina_arame2"
+                    android:layout_weight="1"
+                    android:text="Chapisco Dir"
+                    style="@style/ButtonForm"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:foregroundGravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtVelocidadeArame1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Velocidade"
+                        android:textColor="@color/white" />
+
+
+                    <SeekBar
+                        android:id="@+id/seekBarArame1"
+                        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtVelocidadeArame2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Velocidade"
+                        android:textColor="@color/white" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarArame2"
+                        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="1" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Layout_opraracao"
+                style="@style/style_LinearLayout"
+                android:orientation="horizontal">
+                <Switch
+                    android:id="@+id/sw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="20dp"
+                    android:text="DIREÇÃO DE OPERAÇÃO CARRINHO"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Layout_rpm"
+                style="@style/style_LinearLayout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_textview"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:text="RPM MOENDA"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/txtRPM_tambor"
+                    style="@style/style_textview"                    android:textSize="24dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+
+            <include layout="@layout/informacoes"/>
+            <include layout="@layout/medidor_arame"/>
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

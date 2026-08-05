@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/param_admin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="vertical">
+        <Switch
+            android:id="@+id/habcalibraca"
+            style="@style/style_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:text="Habilita Calibração" />
+    </LinearLayout>
+    <LinearLayout
+           android:id="@+id/layoutPulsosPolegadas"
+           style="@style/style_LinearLayout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor do Pulso/Polegada" />
+
+            <EditText
+                android:id="@+id/editPulsosPolegadas"
+                style="@style/style_edit_forme"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="4"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutPulsosMilimetro"
+            style="@style/style_LinearLayout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_textview"
+                android:text="Valor do Pulso/Milimetro" />
+
+            <EditText
+                android:id="@+id/editPulsosMilimetro"
+                style="@style/style_edit_forme"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="5"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantidade Pulsos no Clic Y"
+                style="@style/style_textview"/>
+
+            <EditText
+                android:id="@+id/editPulsosonClicY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                style="@style/style_textview" />
+
+        </LinearLayout> -->
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutPontoFinalAuto"
+            style="@style/style_LinearLayout"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_textview"
+                android:text="Ponto Final Solda Auto (mm/in de passo friso)" />
+
+            <EditText
+                android:id="@+id/editPontoFinalAuto"
+                style="@style/style_edit_forme"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="2"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal"
+        android:id="@+id/layoutRECUO_DO_Y_PARA_X"
+        android:visibility="visible">
+
+        <TextView
+            style="@style/style_textview"
+            android:layout_weight="1"
+            android:text="Recuo p/ mover carrinho (mm)" />
+
+        <EditText
+            android:id="@+id/editRECUO_DO_Y_PARA_X"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutCursoMaximoTocha"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Curso Maximo Tocha (mm)" />
+
+        <EditText
+            android:id="@+id/editCursoMaximoTocha"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutRAMPA_EIXO_Y"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Rampa Eixo Y \n (1 a 50%)" />
+
+        <EditText
+            android:id="@+id/editRAMPA_EIXO_Y"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutRAMPA_EIXO_X"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Rampa Eixo X Auto \n(1 a 50%)" />
+
+        <EditText
+            android:id="@+id/editRAMPA_EIXO_X"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutRAMPA_MANUAL"
+        style="@style/style_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Rampa Manual \n(100 a 1200)" />
+
+        <EditText
+            android:id="@+id/editRAMPA_MANUAL"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutTEMPO_DE_GIRO"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Tempo de Giro p/ Solda \n(5 a 600s)" />
+
+        <EditText
+            android:id="@+id/editTEMPO_DE_GIRO"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+    style="@style/style_LinearLayout"
+    android:orientation="vertical">
+    <Switch
+        android:id="@+id/CHAPISCO_OU_SOLDA"
+        style="@style/style_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="Chapisco (off) Solda (on)" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/style_LinearLayout"
+        android:orientation="vertical">
+        <Switch
+            android:id="@+id/HAB_OSCILACAO"
+            style="@style/style_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:text="Habilita Oscilação" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutREDUCAO_SISTEMA"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Divide rotação solda(1 a 200)" />
+
+        <EditText
+            android:id="@+id/editREDUCAO_SISTEMA"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutQTD_CICLO"
+        style="@style/style_LinearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_textview"
+            android:text="Quantidade de Ciclo de Operação(1 a 8)" />
+
+        <EditText
+            android:id="@+id/editQTD_CICLO"
+            style="@style/style_edit_forme"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+output/
+*.bin
+*.elf
+*.hex
+*.map
+build/
+.DS_Store

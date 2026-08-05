@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Form_config">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:padding="10dp">
+
+            <LinearLayout
+                style="@style/style_LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/style_textview"
+                    android:text="Distancia entre frisos em Polegadas" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    style="@style/style_edit_forme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <RadioButton
+                        android:id="@+id/radio1pol"
+                        style="@style/style_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1 in"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <RadioButton
+                        android:id="@+id/radio1_5pol"
+                        style="@style/style_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minHeight="48dp"
+                        android:text="1.5 in"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio2pol"
+                        style="@style/style_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minHeight="48dp"
+                        android:text="2 in"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio2_5pol"
+                        style="@style/style_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minHeight="48dp"
+                        android:text="2.5 in"
+                        android:visibility="gone"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio3pol"
+                        style="@style/style_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 in"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_LinearLayout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_textview"
+                    android:layout_weight="1"
+                    android:text="Quantidade de Frisos" />
+
+                <EditText
+                    android:id="@+id/editQTD_FRISOS"
+                    style="@style/style_edit_forme"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_LinearLayout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_textview"
+                    android:layout_weight="1"
+                    android:text="Fio de solda por friso" />
+
+                <EditText
+                    android:id="@+id/editFIO_SOLDA_POR_FRISO"
+                    style="@style/style_edit_forme"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_LinearLayout"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_textview"
+                    android:layout_weight="1"
+                    android:text="Rotação Tambor (RPM)" />
+
+                <EditText
+                    android:id="@+id/editRPM_TAMBOR"
+                    style="@style/style_edit_forme"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/white"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+
+
+                <LinearLayout
+                    style="@style/style_LinearLayout"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtVelocidadeManual"
+                        style="@style/style_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Velocidade Manual" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarSpeedManual"
+                        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:max="100"
+                        android:min="10"
+                        android:progress="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/style_LinearLayout"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtVelocidadeAut"
+                        style="@style/style_textview"
+                        android:text="Velocidade Automat" />
+
+                    <SeekBar
+                        android:id="@+id/seekBarAuto"
+                        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="false"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="1" />
+
+                </LinearLayout>
+        <LinearLayout
+            style="@style/style_LinearLayout"
+            android:orientation="vertical">
+                <Switch
+                    android:id="@+id/alimentador1"
+                    style="@style/style_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="48dp"
+                    android:text="Alimentador 1" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/style_LinearLayout"
+            android:orientation="vertical">
+            <Switch
+                    android:id="@+id/alimentador2"
+                    style="@style/style_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="48dp"
+                    android:text="Alimentador 2" />
+
+        </LinearLayout>
+        <LinearLayout
+            style="@style/style_LinearLayout"
+            android:orientation="vertical">
+                <Switch
+                    android:id="@+id/HAB_sensor_giro"
+                    style="@style/style_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp"
+                    android:minHeight="48dp"
+                    android:text="Sensor de Giro" />
+        </LinearLayout>
+            <include layout="@layout/param_admin" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
