@@ -99,33 +99,33 @@ unsigned char movi_tocha(const long int *contaPul_Y, bool restart){
 } // fim move tocha
 unsigned char oscila_tocha(const long int *contaPul_Y, bool restart){
    static unsigned long pega_millis = millis();
-   static unsigned long tempo_decor = 0;
    if(!reset_tempo_chapisco){
-     pega_millis = millis();   
+     pega_millis = millis();
      reset_tempo_chapisco=true;
-   }    
-   if(restart) {conta_fio_solda=1; return conta_fio_solda; reset_tempo_chapisco=false;}   
+   }
+   if(restart) {conta_fio_solda=1; return conta_fio_solda; reset_tempo_chapisco=false;}
    if(contaPulsosY != PontoInicialSoldaY){
-      driverAutomatico(parametro.SPEED_AUTOMA, parametro.RAMPA_EIXO_Y, 'Y', contaPulsosY, PontoInicialSoldaY, &contaPulsosY, &contaPulsosX); 
+      driverAutomatico(parametro.SPEED_AUTOMA, parametro.RAMPA_EIXO_Y, 'Y', contaPulsosY, PontoInicialSoldaY, &contaPulsosY, &contaPulsosX);
       if(parametro.HAB_OSCILACAO)
       driverAutomatico(parametro.SPEED_AUTOMA, parametro.RAMPA_EIXO_Y, 'Y', contaPulsosY, PontoFinalSoldaY, &contaPulsosY, &contaPulsosX);
-      AcionamentoArameMaquina(true, true);  
+      // Reinicia o cronômetro só depois que os movimentos bloqueantes acima terminam,
+      // assim o tempo gasto neles não é perdido/subestimado na contagem do giro.
+      pega_millis = millis();
+      AcionamentoArameMaquina(true, true);
 
    }
 
-   if(millis() - pega_millis >= 1000){
-       tempo_decor++;
-       tempoGiroDecorrido = tempo_decor*1000;
-       pega_millis = millis();         
-   }
-   
-   if((tempo_decor*1000) >= tempGiro){
-        // Recua o Y a largura de um Fio      
+   // Mede o tempo decorrido diretamente (igual movi_tocha), em vez de somar em
+   // "fatias" fixas de 1000ms — isso fazia o tempo de giro variar de forma
+   // inconsistente conforme a duração do movimento bloqueante acima.
+   tempoGiroDecorrido = millis() - pega_millis;
+
+   if((millis() - pega_millis) >= tempGiro){
+        // Recua o Y a largura de um Fio
         tempopPorFrisoDecorrido=(tempGiro/1000)*conta_fio_solda;
-        conta_fio_solda++;        
+        conta_fio_solda++;
         reset_tempo_chapisco=false;
-        tempo_decor=0;
-    }     
+    }
     return conta_fio_solda;
 } // fim oscila tocha
 unsigned char movi_carrinho(const long int *contaPul_X, bool restart){
