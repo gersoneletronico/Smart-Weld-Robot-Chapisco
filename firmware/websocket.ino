@@ -5,7 +5,7 @@ String tratamentoString_P_IHM(){
   // Monta a string em um buffer fixo (em vez de concatenar objetos String em série),
   // evitando fragmentação de heap nesta função que roda a cada ~100ms continuamente.
   static char buf[220];
-  int n = snprintf(buf, sizeof(buf),
+  snprintf(buf, sizeof(buf),
             "%.2f:%.2f:%.2f:%.2f:%u de %u:%.2f:%d:%d:%u:%d:%u:%d:%u:%.2f:%.2f:%d:%lu:%u:%.2f:%d:%.2f:%.2f:%.2f:%s:",
             (float) contaPulsosY/parametro.PULSO_MM_Y,                    // Dados[0]
             (float) contaPulsosX/parametro.PULSO_POL_X,                   // Dados[1]
